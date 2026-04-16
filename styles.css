@@ -1,0 +1,102 @@
+body {
+    text-align: center;
+    background: #404b57;
+    min-height: 100vh;
+    font-family: "Aldrich", sans-serif;
+}
+
+.aldrich-regular {
+  font-family: "Aldrich", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+
+:root {
+    --tab1-color: #da3838;
+    --tab2-color: #f09319;
+    --tab3-color: #fcf835;
+    --tab4-color: #5fbe28;
+}
+
+.tab-menu {
+    display: flex;
+    position: relative;
+    margin: 20px auto 0 auto;
+    justify-content: flex-end;
+    width: 80%;
+}
+.tab {
+    border: 3px solid transparent;
+    border-bottom: 0;
+    box-sizing: border-box;
+    padding: 15px 25px;
+    margin-left: 10px;
+    position: relative;
+    cursor: pointer;
+    transition: background 0.3s, transform 0.2s, font-size 0.2s, margin 0.2s, border-color 0.2s;
+    border-radius: 10px 10px 0 0;
+    box-shadow: 2px 0 5px rgba(0,0,0,0.1);
+}
+.tab:nth-child(1) { background: var(--tab1-color); z-index: 4; }
+.tab:nth-child(2) { background: var(--tab2-color); z-index: 3; }
+.tab:nth-child(3) { background: var(--tab3-color); z-index: 2; }
+.tab:nth-child(4) { background: var(--tab4-color); z-index: 1; }
+
+.tab:hover {
+    border-color: #ffffff;
+    border-bottom: 0;
+}
+.tab.active {
+    font-size: 1.1em;
+    border-color: #ffffff;
+    z-index: 10;
+    transform: translateY(0px) scale(1.05);
+    border-bottom: 0;
+    margin-bottom: -1px;
+    box-shadow: none;
+}
+
+.content-box {
+    width: 80%;
+    min-height: 300px;
+    border: 2px solid #ffffff;
+    border-radius: 10px;
+    margin: 0 auto;
+    padding: 20px;
+    text-align: left;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    color: white;
+}
+
+@media (max-width: 660px) {
+    .tab-menu,
+    .content-box {
+        width: 90%;
+    }
+
+    .tab-menu {
+        flex-direction: column;
+        align-items: center;
+        justify-content: flex-start;
+    }
+
+    .tab {
+        width: 100%;
+        margin-left: 0;
+        margin-top: 10px;
+        border-radius: 10px;
+    }
+
+    .tab:first-child {
+        margin-top: 0;
+    }
+
+    .tab:last-child {
+        margin-bottom: 10px;
+    }
+
+    .tab.active {
+        transform: scale(1.03);
+    }
+}
