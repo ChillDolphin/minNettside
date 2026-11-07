@@ -1,46 +1,16 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Viktor Manger</title>
-    <link rel="stylesheet" href="styles.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Aldrich&display=swap" rel="stylesheet">
-</head>
-<body>
-    <h1 style="color: yellow;">⚠ Denne siden er under konstruksjon! ⚠</h1>
-    <nav class="tab-menu">
-        <div class="tab">Hjem</div>
-        <div class="tab">Ønskeliste</div>
-        <div class="tab">Prosjekter</div>
-        <div class="tab">For arbeidsgiver</div>
-    </nav>
-    <div class="content-box">
-        Dette er en stor boks for tekst. Du kan legge inn innhold her.
-    </div>
-    <script>
-        const tabs = document.querySelectorAll('.tab');
-        const contentBox = document.querySelector('.content-box');
-        const contents = {
-            'Hjem': 'Velkommen til hjem-siden! Her kan du finne informasjon om meg og mine interesser.',
-            'Ønskeliste': 'På ønskelisten min står det: Klatreførerbok, sikringsbriller.',
-            'Prosjekter': 'Jeg har jobbet med flere prosjekter, inkludert denne nettsiden og battle-bots.',
-            'For arbeidsgiver': 'Du kan kontakte meg på e-post: viktor.manger@gmail.com, eller på telefon: 94 297 858. <a href="Viktor Manger - CV.pdf" download style="color: white; text-decoration: underline;">Her er min cv</a>'
-        };
-        tabs.forEach(tab => {
-            tab.addEventListener('click', () => {
-                tabs.forEach(t => t.classList.remove('active'));
-                tab.classList.add('active');
-                contentBox.innerHTML = contents[tab.textContent];
-                contentBox.style.backgroundColor = getComputedStyle(tab).backgroundColor;
-            });
-        });
-        // Set default to first tab
-        tabs[0].classList.add('active');
-        contentBox.innerHTML = contents[tabs[0].textContent];
-        contentBox.style.backgroundColor = getComputedStyle(tabs[0]).backgroundColor;
-    </script>
-</body>
+<!doctype html>
+<html lang="no">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Min nettside</title>
+    <link rel="stylesheet" href="./styles.css">
+  </head>
+  <body class="home-page">
+    <main>
+      <a href="./ønskeliste.html" aria-label="Åpne ønskelisten">Ønskeliste</a>
+      <a href="./blank.html" aria-label="Åpne blank side">Blank side</a>
+      <a href="./blank.html" aria-label="Åpne blank side">Blank side</a>
+    </main>
+  </body>
 </html>

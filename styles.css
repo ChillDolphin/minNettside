@@ -1,102 +1,267 @@
+@font-face {
+  font-family: "OpenSansPX";
+  src: url("./OpenSansPX.ttf") format("truetype");
+  font-display: swap;
+}
+
+html {
+  font-size: 300%;
+}
+
+* {
+  box-sizing: border-box;
+}
+
 body {
-    text-align: center;
-    background: #404b57;
-    min-height: 100vh;
-    font-family: "Aldrich", sans-serif;
+  min-height: 100vh;
+  margin: 0;
+  padding: 24px;
+  background: #204e4a;
+  font-family: "OpenSansPX", sans-serif;
 }
 
-.aldrich-regular {
-  font-family: "Aldrich", sans-serif;
-  font-weight: 400;
-  font-style: normal;
+.home-page main {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  align-content: center;
+  min-height: calc(100vh - 48px);
 }
 
-
-:root {
-    --tab1-color: #da3838;
-    --tab2-color: #f09319;
-    --tab3-color: #fcf835;
-    --tab4-color: #5fbe28;
+.home-page main a {
+  display: grid;
+  width: 100%;
+  aspect-ratio: 1;
+  place-items: center;
+  background: #ecba82;
+  color: #204e4a;
+  text-align: center;
+  text-decoration: none;
+  transition: background-color 160ms ease;
 }
 
-.tab-menu {
-    display: flex;
-    position: relative;
-    margin: 20px auto 0 auto;
-    justify-content: flex-end;
-    width: 80%;
-}
-.tab {
-    border: 3px solid transparent;
-    border-bottom: 0;
-    box-sizing: border-box;
-    padding: 15px 25px;
-    margin-left: 10px;
-    position: relative;
-    cursor: pointer;
-    transition: background 0.3s, transform 0.2s, font-size 0.2s, margin 0.2s, border-color 0.2s;
-    border-radius: 10px 10px 0 0;
-    box-shadow: 2px 0 5px rgba(0,0,0,0.1);
-}
-.tab:nth-child(1) { background: var(--tab1-color); z-index: 4; }
-.tab:nth-child(2) { background: var(--tab2-color); z-index: 3; }
-.tab:nth-child(3) { background: var(--tab3-color); z-index: 2; }
-.tab:nth-child(4) { background: var(--tab4-color); z-index: 1; }
-
-.tab:hover {
-    border-color: #ffffff;
-    border-bottom: 0;
-}
-.tab.active {
-    font-size: 1.1em;
-    border-color: #ffffff;
-    z-index: 10;
-    transform: translateY(0px) scale(1.05);
-    border-bottom: 0;
-    margin-bottom: -1px;
-    box-shadow: none;
+.home-page main a:nth-child(2) {
+  background: #81c14b;
 }
 
-.content-box {
-    width: 80%;
-    min-height: 300px;
-    border: 2px solid #ffffff;
-    border-radius: 10px;
-    margin: 0 auto;
-    padding: 20px;
-    text-align: left;
-    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-    color: white;
+.home-page main a:nth-child(3) {
+  background: #2e933c;
 }
 
-@media (max-width: 660px) {
-    .tab-menu,
-    .content-box {
-        width: 90%;
-    }
+.home-page main a:hover,
+.home-page main a:focus-visible {
+  background: #297045;
+}
 
-    .tab-menu {
-        flex-direction: column;
-        align-items: center;
-        justify-content: flex-start;
-    }
+.home-page main a:focus-visible {
+  outline: 2px solid #333;
+  outline-offset: 4px;
+}
 
-    .tab {
-        width: 100%;
-        margin-left: 0;
-        margin-top: 10px;
-        border-radius: 10px;
-    }
+.back-button {
+  position: fixed;
+  top: 24px;
+  left: 24px;
+  padding: 10px 14px;
+  border-radius: 6px;
+  background: #fff;
+  color: #222;
+  text-decoration: none;
+}
 
-    .tab:first-child {
-        margin-top: 0;
-    }
+.back-button:focus-visible {
+  outline: 2px solid #333;
+  outline-offset: 4px;
+}
 
-    .tab:last-child {
-        margin-bottom: 10px;
-    }
+.wishlist-list {
+  width: min(100%, 900px);
+  margin: 0 auto;
+  border: 4px solid #000;
+}
 
-    .tab.active {
-        transform: scale(1.03);
-    }
+.wishlist-row {
+  display: grid;
+  height: 64px;
+  grid-template-columns: 64px minmax(0, 1fr) minmax(64px, 120px);
+  align-items: center;
+  border-top: 2px solid #000;
+  color: #000;
+  text-decoration: none;
+  transition: transform 150ms ease;
+}
+
+.wishlist-row > * {
+  min-width: 0;
+  padding: 0 12px;
+}
+
+.wishlist-row .row-number {
+  display: grid;
+  height: 64px;
+  padding: 0;
+  place-items: center;
+  border-right: 2px solid #000;
+}
+
+.wishlist-row > :last-child {
+  display: grid;
+  min-width: 64px;
+  height: 64px;
+  padding: 0 12px;
+  place-items: center;
+  border-left: 2px solid #000;
+}
+
+.wishlist-row.row-1 {
+  background: #fb3640;
+}
+
+.wishlist-row.row-2 {
+  background: #fb4a52;
+}
+
+.wishlist-row.row-3 {
+  background: #fb5e64;
+}
+
+.wishlist-row.row-4 {
+  background: #fa7276;
+}
+
+.wishlist-row.row-5 {
+  background: #fa8688;
+}
+
+.wishlist-row.row-6 {
+  background: #fa9a9a;
+}
+
+.wishlist-row.row-7 {
+  background: #faaeab;
+}
+
+.wishlist-row.row-8 {
+  background: #f9c2bd;
+}
+
+.wishlist-row.row-9 {
+  background: #f9d6cf;
+}
+
+.wishlist-row.row-10 {
+  background: #f9eae1;
+}
+
+.wishlist-row.subcategory-1 {
+  background: #fa7c7f;
+}
+
+.wishlist-row.subcategory-2 {
+  background: #fa8688;
+}
+
+.wishlist-row.subcategory-3 {
+  background: #fa9091;
+}
+
+.wishlist-row.subcategory-4 {
+  background: #fa9a9a;
+}
+
+.wishlist-row.subcategory-5 {
+  background: #faa4a3;
+}
+
+.wishlist-row.row-3-subcategory-1 {
+  background: #fa6e72;
+}
+
+.wishlist-row.row-3-subcategory-2 {
+  background: #fa696e;
+}
+
+.wishlist-row.row-3-subcategory-3 {
+  background: #fa646a;
+}
+
+.wishlist-group[open] ~ .row-5 {
+  background: #faaeab;
+}
+
+.wishlist-group[open] ~ .row-6 {
+  background: #f9b8b4;
+}
+
+.wishlist-group[open] ~ .row-7 {
+  background: #f9c2bd;
+}
+
+.wishlist-group[open] ~ .row-8 {
+  background: #f9ccc6;
+}
+
+.wishlist-group[open] ~ .row-9 {
+  background: #f9d6cf;
+}
+
+.wishlist-group[open] ~ .row-10 {
+  background: #f9eae1;
+}
+
+.wishlist-group > summary.wishlist-row {
+  cursor: pointer;
+  list-style: none;
+}
+
+.wishlist-group > .wishlist-row::-webkit-details-marker {
+  display: none;
+}
+
+.disclosure-indicator::after {
+  content: "+";
+  float: right;
+  font-size: 1.25rem;
+  text-align: center;
+  width: 100%;
+}
+
+.disclosure-indicator--minus::after {
+  content: "−";
+}
+
+.wishlist-group[open] .disclosure-indicator::after {
+  content: "−";
+}
+
+.wishlist-row:hover,
+.wishlist-row:focus-visible {
+  position: relative;
+  z-index: 1;
+  transform: scale(1.015);
+  outline: none;
+  box-shadow: 0 0 0 4px #000;
+}
+
+.wishlist-page .back-button {
+  position: static;
+  display: inline-block;
+  margin-bottom: 24px;
+  background: #f9eae1;
+  color: #000;
+}
+
+.wishlist-page .back-button:hover {
+  background: #fb3640;
+  color: #000;
+}
+
+.wishlist-page .back-button:focus-visible {
+  outline-color: #87a330;
+}
+
+@media (max-width: 650px) {
+  .home-page main {
+    grid-template-columns: 1fr;
+  }
 }
