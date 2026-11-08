@@ -16,7 +16,7 @@ body {
   min-height: 100vh;
   margin: 0;
   padding: 24px;
-  background: #204e4a;
+  background: #534c44;
   font-family: "OpenSansPX", sans-serif;
 }
 
@@ -28,32 +28,48 @@ body {
   min-height: calc(100vh - 48px);
 }
 
-.home-page main a {
+.home-page main .home-button {
   display: grid;
+  position: relative;
+  overflow: hidden;
   width: 100%;
   aspect-ratio: 1;
-  place-items: center;
+  container-type: inline-size;
+  place-items: start center;
+  align-content: start;
+  gap: 12px;
   background: #ecba82;
-  color: #204e4a;
+  color: #000;
   text-align: center;
   text-decoration: none;
-  transition: background-color 160ms ease;
+  transition: background-color 160ms ease, transform 160ms ease;
 }
 
-.home-page main a:nth-child(2) {
-  background: #81c14b;
+.home-page main .home-button img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  image-rendering: pixelated;
 }
 
-.home-page main a:nth-child(3) {
-  background: #2e933c;
+.home-page main .home-button span {
+  position: relative;
+  z-index: 1;
+  margin-top: 20px;
+  font-size: clamp(1rem, 12cqw, 3rem);
 }
 
-.home-page main a:hover,
-.home-page main a:focus-visible {
-  background: #297045;
+.home-page main .home-button:focus-visible {
+  background: #b1c13f;
 }
 
-.home-page main a:focus-visible {
+.home-page main .home-button:hover {
+  transform: scale(1.04);
+}
+
+.home-page main .home-button:focus-visible {
   outline: 2px solid #333;
   outline-offset: 4px;
 }
@@ -83,7 +99,7 @@ body {
 .wishlist-row {
   display: grid;
   height: 64px;
-  grid-template-columns: 64px minmax(0, 1fr) minmax(64px, 120px);
+  grid-template-columns: minmax(0, 1fr) minmax(64px, 120px);
   align-items: center;
   border-top: 2px solid #000;
   color: #000;
@@ -94,14 +110,6 @@ body {
 .wishlist-row > * {
   min-width: 0;
   padding: 0 12px;
-}
-
-.wishlist-row .row-number {
-  display: grid;
-  height: 64px;
-  padding: 0;
-  place-items: center;
-  border-right: 2px solid #000;
 }
 
 .wishlist-row > :last-child {
@@ -217,11 +225,16 @@ body {
   outline-color: #87a330;
 }
 
-@media (max-width: 650px) {
+@media (max-width: 719px) {
   .home-page main {
     grid-template-columns: 1fr;
-
   }
+
+  .wishlist-row,
+  .wishlist-row > :last-child {
+    height: 48px;
+  }
+
   html {
     font-size: 200%;
   }
@@ -231,5 +244,8 @@ body {
   html {
     font-size: 100%;
   }
+  .wishlist-row,
+  .wishlist-row > :last-child {
+    height: 24px;
+  }
 }
-
