@@ -125,8 +125,16 @@ body {
   background: #fb5e64;
 }
 
+.wishlist-group--row-3 {
+  --group-row-background: #fb5e64;
+}
+
 .wishlist-row.row-4 {
   background: #fa7276;
+}
+
+.wishlist-group--row-4 {
+  --group-row-background: #fa7276;
 }
 
 .wishlist-row.row-5 {
@@ -153,60 +161,9 @@ body {
   background: #f9eae1;
 }
 
-.wishlist-row.subcategory-1 {
-  background: #fa7c7f;
-}
-
-.wishlist-row.subcategory-2 {
-  background: #fa8688;
-}
-
-.wishlist-row.subcategory-3 {
-  background: #fa9091;
-}
-
-.wishlist-row.subcategory-4 {
-  background: #fa9a9a;
-}
-
-.wishlist-row.subcategory-5 {
-  background: #faa4a3;
-}
-
-.wishlist-row.row-3-subcategory-1 {
-  background: #fa6e72;
-}
-
-.wishlist-row.row-3-subcategory-2 {
-  background: #fa696e;
-}
-
-.wishlist-row.row-3-subcategory-3 {
-  background: #fa646a;
-}
-
-.wishlist-group[open] ~ .row-5 {
-  background: #faaeab;
-}
-
-.wishlist-group[open] ~ .row-6 {
-  background: #f9b8b4;
-}
-
-.wishlist-group[open] ~ .row-7 {
-  background: #f9c2bd;
-}
-
-.wishlist-group[open] ~ .row-8 {
-  background: #f9ccc6;
-}
-
-.wishlist-group[open] ~ .row-9 {
-  background: #f9d6cf;
-}
-
-.wishlist-group[open] ~ .row-10 {
-  background: #f9eae1;
+.wishlist-group > summary.wishlist-row,
+.wishlist-group .subcategory-row {
+  background: var(--group-row-background);
 }
 
 .wishlist-group > summary.wishlist-row {
@@ -263,5 +220,16 @@ body {
 @media (max-width: 650px) {
   .home-page main {
     grid-template-columns: 1fr;
+
+  }
+  html {
+    font-size: 200%;
   }
 }
+
+@media (max-width: 400px) {
+  html {
+    font-size: 100%;
+  }
+}
+
